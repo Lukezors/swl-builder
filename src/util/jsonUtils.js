@@ -1,9 +1,5 @@
-import data from 'data/unitOptions'
+import data from "data/unitOptions";
 
-export const sum = (i, x) => {
-    return i + x;
-};
+export const sum = (i, x) => i + x;
 
-export const getFaction = (factionName) => {
-    return data.units[factionName];
-};
+export const getFaction = factionName => data.units[factionName];
