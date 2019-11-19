@@ -7,6 +7,6 @@ const Body = styled.div`
   flex-grow: 3;
 `;
 
-const ArmyList = () => <Body></Body>;
+const ArmyList = () => <Body />;
 
 export default ArmyList;
