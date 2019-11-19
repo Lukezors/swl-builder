@@ -16,7 +16,15 @@ const CollapsableHeader = (props) => {
 
     const [open, setOpen] = useState(false);
     return (
-        <CollapsableHeaderBody onClick={()=>setOpen(!open)}>
+        <Body onClick={() => setOpen(!open)}>
+            <Title>
+                {title}
+            </Title>
+            
+            {open &&
+                {children}
+            }
+        </Body>
                 <CollapsableHeaderTitle>
                 {props.title}
                 </CollapsableHeaderTitle>
