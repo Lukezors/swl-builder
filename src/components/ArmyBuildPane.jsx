@@ -18,6 +18,11 @@ const ArmyBuildPane = (props) => {
             <ArmyList/>
         </Container>
     );
-};
+const ArmyBuildPane = () => (
+    <Container>
+        <SelectionPane />
+        <ArmyList />
+    </Container>
+);
 
 export default ArmyBuildPane;
