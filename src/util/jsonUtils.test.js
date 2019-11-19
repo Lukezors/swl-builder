@@ -1,5 +1,4 @@
 import {sum, getFaction} from './jsonUtils'
-import data from '../data/unitOptions'
 
 
 it('adds 1 + 2 to equal 3', () => {
