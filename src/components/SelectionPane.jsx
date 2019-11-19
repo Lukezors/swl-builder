@@ -17,7 +17,7 @@ const Category = ({ title, units }) => (
   <CollapsableHeader key={title} title={title}>
     {units.map(subitem => {
       return <SelectionCard unit={subitem} key={subitem.name} />;
-    })}
+    {units.map(subitem => <SelectionCard unit={subitem} key={subitem.name} /> )}
   </CollapsableHeader>
 );
 
