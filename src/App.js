@@ -1,12 +1,7 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import ArmyBuildPane from './components/ArmyBuildPane'
+import React from "react";
 
-function App() {
-  return (
-    <ArmyBuildPane/>
-  );
-}
+import ArmyBuildPane from "./components/ArmyBuildPane";
+
+const App = () => <ArmyBuildPane />;
 
 export default App;

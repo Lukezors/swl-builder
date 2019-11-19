@@ -11,13 +11,6 @@ const Container = styled.div`
     margin: 30px
 `;
 
-const ArmyBuildPane = (props) => {
-    return (
-        <Container>
-            <SelectionPane/>
-            <ArmyList/>
-        </Container>
-    );
 const ArmyBuildPane = () => (
     <Container>
         <SelectionPane />

@@ -1,30 +1,24 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components'
+import React from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
 
-
-const SelectionCardBody = styled.div`
-    border-style: solid;
-    border-width: 1px;
+const Body = styled.div`
+  border-style: solid;
+  border-width: 1px;
 `;
 
-
-const SelectionCard = (props) => {
-    const {name, cost} = props.unit;
-    return (
-        <SelectionCardBody>
-            <p>{name}</p>
-            <p>{cost}</p>
-        </SelectionCardBody>
-    )
+const SelectionCard = ({ unit }) => {
+  const { name, cost } = unit; //todo temporary will need to expand deez props more when the comp grows into something usable
+  return (
+    <Body>
+      <p>{name}</p>
+      <p>{cost}</p>
+    </Body>
+  );
 };
 
 SelectionCard.propTypes = {
-    // types here
-};
-
-SelectionCard.defaultProps = {
-    // defaults here
+  unit: PropTypes.object.isRequired
 };
 
 export default SelectionCard;

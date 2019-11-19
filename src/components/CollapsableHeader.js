@@ -1,48 +1,27 @@
-import React,{ useState } from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components'
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
 
+const Body = styled.div``;
 
-const CollapsableHeaderBody = styled.div`
+const Title = styled.div`
+  border-bottom: 1px solid;
 `;
 
-const CollapsableHeaderTitle = styled.div`
-    border-style: solid;
-    border-width: 1px;
-`;
+const CollapsableHeader = ({ title, children }) => {
+  const [open, setOpen] = useState(false);
+  return (
+    <Body onClick={() => setOpen(!open)}>
+      <Title>{title}</Title>
 
-
-const CollapsableHeader = (props) => {
-
-    const [open, setOpen] = useState(false);
-    return (
-        <Body onClick={() => setOpen(!open)}>
-            <Title>
-                {title}
-            </Title>
-            
-            {open &&
-                {children}
-            }
-        </Body>
-                <CollapsableHeaderTitle>
-                {props.title}
-                </CollapsableHeaderTitle>
-            {open ? (
-                <div >
-                {props.children}
-                </div>
-                ) : null}
-        </CollapsableHeaderBody>
-    )
+      {open && <>{children}</>}
+    </Body>
+  );
 };
 
 CollapsableHeader.propTypes = {
-    // types here
-};
-
-CollapsableHeader.defaultProps = {
-    // defaults here
+  children: PropTypes.arrayOf(PropTypes.element),
+  title: PropTypes.string.isRequired
 };
 
 export default CollapsableHeader;

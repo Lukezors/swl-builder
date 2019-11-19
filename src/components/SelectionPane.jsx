@@ -15,29 +15,21 @@ const Body = styled.div`
 `;
 
 
-const SelectionPane = (props) => {
-    const curData = getFaction('rebel');
-    return (
-        <Body>
-            {Object.keys(curData).map((item, index) => {
-            return (
-            <CollapsableHeader key={item} title={item}>
-            {
-                curData[item].map((subitem, i) => {
-                    console.log(subitem);
-                    return (
-                        <SelectionCard
-                            unit={subitem}
-                            key={subitem.name}
-                        />
-                    )
-                })
-            }
-            </CollapsableHeader>
-            )
-        })}
-        </Body>
-    )
+const SelectionPane = props => {
+  const curData = getFaction("rebel");
+  return (
+    <Body>
+      {Object.keys(curData).map((item, index) => {
+        return (
+          <CollapsableHeader key={item} title={item}>
+            {curData[item].map((subitem, i) => {
+              return <SelectionCard unit={subitem} key={subitem.name} />;
+            })}
+          </CollapsableHeader>
+        );
+      })}
+    </Body>
+  );
 };
 
 export default SelectionPane;
