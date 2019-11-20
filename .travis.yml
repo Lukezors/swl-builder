@@ -11,6 +11,7 @@ deploy:
   provider: pages
   cleanup: false
   local_dir: "build"
+  skip_cleanup: true
   token: $github_token  # Set in the settings page of your repository, as a secure variable
   keep_history: true
   on:
