@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/swl-builder/static/css/main.34de6062.chunk.css",
-    "main.js": "/swl-builder/static/js/main.4436dd3d.chunk.js",
-    "main.js.map": "/swl-builder/static/js/main.4436dd3d.chunk.js.map",
+    "main.js": "/swl-builder/static/js/main.57d5252f.chunk.js",
+    "main.js.map": "/swl-builder/static/js/main.57d5252f.chunk.js.map",
     "runtime-main.js": "/swl-builder/static/js/runtime-main.bd16ac2f.js",
     "runtime-main.js.map": "/swl-builder/static/js/runtime-main.bd16ac2f.js.map",
-    "static/js/2.aa0124b7.chunk.js": "/swl-builder/static/js/2.aa0124b7.chunk.js",
-    "static/js/2.aa0124b7.chunk.js.map": "/swl-builder/static/js/2.aa0124b7.chunk.js.map",
+    "static/js/2.6a392b30.chunk.js": "/swl-builder/static/js/2.6a392b30.chunk.js",
+    "static/js/2.6a392b30.chunk.js.map": "/swl-builder/static/js/2.6a392b30.chunk.js.map",
     "index.html": "/swl-builder/index.html",
-    "precache-manifest.fa1ae80338ee0b127a029b4d4060168b.js": "/swl-builder/precache-manifest.fa1ae80338ee0b127a029b4d4060168b.js",
+    "precache-manifest.abf52346269934a9abe179c82bbe1fad.js": "/swl-builder/precache-manifest.abf52346269934a9abe179c82bbe1fad.js",
     "service-worker.js": "/swl-builder/service-worker.js",
     "static/css/main.34de6062.chunk.css.map": "/swl-builder/static/css/main.34de6062.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.bd16ac2f.js",
-    "static/js/2.aa0124b7.chunk.js",
+    "static/js/2.6a392b30.chunk.js",
     "static/css/main.34de6062.chunk.css",
-    "static/js/main.4436dd3d.chunk.js"
+    "static/js/main.57d5252f.chunk.js"
   ]
 }
