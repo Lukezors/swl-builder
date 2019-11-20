@@ -18,10 +18,7 @@ const UsageBarBody = styled.div`
 const UsageBar = ({
   points,
   slots
-}) => {
-    console.log(slots);
-    console.log(slots[RANKS.OPERATIVE]);
-    return (
+}) => (
   <UsageBarBody>
     <UsageBarItem name={"Points"} currentValue={points} maxValue={800} />
     {/*TODO: Points may need diff styling/ comp*/}
@@ -56,7 +53,7 @@ const UsageBar = ({
         maxValue={2} 
     />
   </UsageBarBody>
-);};
+);
 
 UsageBar.propTypes = {
   points: PropTypes.number.isRequired,
