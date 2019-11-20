@@ -1,10 +1,9 @@
+import React from "react";
+import styled from "styled-components";
 
-import React from 'react';
-import styled from 'styled-components'
-
-import ArmyList from'./ArmyList';
-import SelectionPane from './SelectionPane'
-import UsageBar from './UsageBar'
+import ArmyList from "./ArmyList";
+import SelectionPane from "./SelectionPane";
+import UsageBar from "./UsageBar";
 
 const Container = styled.div`
     display: grid;
@@ -15,11 +14,11 @@ const Container = styled.div`
 `;
 
 const ArmyBuildPane = () => (
-    <Container>
-        <UsageBar/>
-        <SelectionPane />
-        <ArmyList />
-    </Container>
+  <Container>
+    <UsageBar />
+    <SelectionPane />
+    <ArmyList />
+  </Container>
 );
 
 export default ArmyBuildPane;

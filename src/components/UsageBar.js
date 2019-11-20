@@ -32,7 +32,8 @@ const UsageBar = ({
   heavySlots
 }) => (
   <UsageBarBody>
-    <UsageBarItem name={"Points"} currentValue={points} maxValue={800} /> {/*TODO: Points may need diff styling/ comp*/}
+    <UsageBarItem name={"Points"} currentValue={points} maxValue={800} />{" "}
+    {/*TODO: Points may need diff styling/ comp*/}
     <UsageBarItem
       name={RANK_COMMANDER}
       currentValue={commanderSlots}
@@ -58,7 +59,11 @@ const UsageBar = ({
       currentValue={supportSlots}
       maxValue={3}
     />
-    <UsageBarItem name={RANK_HEAVY} currentValue={heavySlots} maxValue={2} />
+    <UsageBarItem
+        name={RANK_HEAVY}
+        currentValue={heavySlots}
+        maxValue={2}
+    />
   </UsageBarBody>
 );
 
