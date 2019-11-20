@@ -1,7 +1,7 @@
 {
   "units": {
     "rebel": {
-      "Commanders": [
+      "Commander": [
         {
           "name": "Luke Skywalker",
           "cost": 165,
@@ -20,6 +20,18 @@
           "type": "trooper",
           "keywords": "",
           "upgrades_slots": ["leadership"],
+          "restricted_upgrades": []
+        }
+      ],
+      "Operative": [
+        {
+          "name": "Chewbacca",
+          "cost": 165,
+          "rank": "commander",
+          "faction": "rebel",
+          "type": "trooper",
+          "keywords": "",
+          "upgrades_slots": ["force", "force", "leadership"],
           "restricted_upgrades": []
         }
       ],
