@@ -4,7 +4,7 @@ import styled from "styled-components";
 import CollapsableHeader from "./CollapsableHeader";
 import SelectionCard from "./SelectionCard";
 
-import { getFaction } from "util/jsonUtils";
+import { getFaction } from "../util/jsonUtils";
 
 const Body = styled.div`
   border-style: solid;
