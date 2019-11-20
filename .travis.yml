@@ -3,13 +3,13 @@ node_js:
   - node
 
 script:
-  - yarn build
-  - yarn test
   - yarn lint
+  - yarn test
+  - yarn build
 
 deploy:
   provider: pages
-  skip_cleanup: true
+  cleanup: false
   github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
   keep_history: true
   on:
