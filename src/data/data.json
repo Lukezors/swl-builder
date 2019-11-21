@@ -4,8 +4,8 @@
       "Commander": [
         {
           "name": "Luke Skywalker",
-          "cost": 165,
-          "rank": "commander",
+          "point_cost": 165,
+          "rank": "Commander",
           "faction": "rebel",
           "type": "trooper",
           "keywords": "",
@@ -14,8 +14,8 @@
         },
         {
           "name": "Leia Organa",
-          "cost": 90,
-          "rank": "commander",
+          "point_cost": 90,
+          "rank": "Commander",
           "faction": "rebel",
           "type": "trooper",
           "keywords": "",
@@ -26,7 +26,7 @@
       "Operative": [
         {
           "name": "Chewbacca",
-          "cost": 165,
+          "point_cost": 165,
           "rank": "commander",
           "faction": "rebel",
           "type": "trooper",
@@ -37,7 +37,7 @@
       ],
       "Corps": [{
         "name": "Rebel Troopers",
-        "cost": 90,
+        "point_cost": 90,
         "rank": "corps",
         "faction": "rebel",
         "type": "trooper",
@@ -49,7 +49,7 @@
       "Special Forces": [
         {
           "name": "Wookie Warriors",
-          "cost": 90,
+          "point_cost": 90,
           "rank": "corps",
           "faction": "rebel",
           "type": "trooper",
@@ -61,7 +61,7 @@
       ],
       "Support": [{
         "name": "AT-RT",
-        "cost": 90,
+        "point_cost": 90,
         "rank": "corps",
         "faction": "rebel",
         "type": "trooper",
@@ -73,7 +73,7 @@
       "Heavy": [
         {
           "name": "AirSpeeder",
-          "cost": 90,
+          "point_cost": 90,
           "rank": "corps",
           "faction": "rebel",
           "type": "trooper",

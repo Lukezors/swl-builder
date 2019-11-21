@@ -1,4 +1,4 @@
-import data from "../data/unitOptions";
+import data from "../data/data";
 
 export const sum = (i, x) => i + x;
 
