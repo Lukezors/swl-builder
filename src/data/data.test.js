@@ -3,16 +3,15 @@ import PropTypes from "prop-types";
 import {getFaction} from "../util/jsonUtils";
 import {unitTemplate} from "./dataTemplates";
 
-const originalConsoleError = console.error;
 
 beforeAll(() => {
-  console.error = message => {
+  console.error = jest.fn(message => {
     throw new Error(message);
-  };
+  });
 });
 
 afterAll(() => {
-  console.error = originalConsoleError;
+  console.error.mockReset();
 });
 
 it("Validates json", () => {
