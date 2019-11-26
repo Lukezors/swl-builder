@@ -1,4 +1,5 @@
 import {sum, getFaction} from './jsonUtils'
+import {FACTIONS} from "./constants";
 
 
 it('adds 1 + 2 to equal 3', () => {
@@ -6,6 +7,6 @@ it('adds 1 + 2 to equal 3', () => {
 });
 
 test('check data', () => {
-    expect(getFaction('rebel')).toBeDefined()
+    expect(getFaction(FACTIONS.REBEL)).toBeDefined()
 });
 
