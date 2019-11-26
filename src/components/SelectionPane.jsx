@@ -6,6 +6,8 @@ import SelectionCard from "./SelectionCard";
 
 import { getFaction } from "../util/jsonUtils";
 
+import { FACTIONS } from "../util/constants";
+
 const Body = styled.div`
   border-style: solid;
   border-width: 1px;
@@ -15,12 +17,14 @@ const Body = styled.div`
 
 const Category = ({ title, units }) => (
   <CollapsableHeader key={title} title={title}>
-    {units.map(subitem => <SelectionCard unit={subitem} key={subitem.name} /> )}
+    {units.map(subitem => (
+      <SelectionCard unit={subitem} key={subitem.name} />
+    ))}
   </CollapsableHeader>
 );
 
 const SelectionPane = () => {
-  const curData = getFaction("rebel");
+  const curData = getFaction(FACTIONS.REBEL);
   return (
     <Body>
       {Object.keys(curData).map(item => (
