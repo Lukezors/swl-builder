@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import SelectionCard from "./SelectionCard";
+import UnitCard from "./UnitCard";
 
 const Body = styled.div`
   border-style: solid;
@@ -11,7 +12,7 @@ const Body = styled.div`
 
 const ArmyList = ({factionUnits, removeFunction}) => <Body>
     {Object.keys(factionUnits).map(key => (
-        <SelectionCard unit={factionUnits[key]} key={key} addFunction={removeFunction}/>
+        <UnitCard unit={factionUnits[key]} key={key} deleteFunction={removeFunction} index={key}/>
     ))}
 
 </Body>;
