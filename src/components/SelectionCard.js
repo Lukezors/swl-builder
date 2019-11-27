@@ -7,18 +7,24 @@ const Body = styled.div`
   border-width: 1px;
 `;
 
-const SelectionCard = ({ unit }) => {
-  const { name, cost } = unit; //todo temporary will need to expand deez props more when the comp grows into something usable
+const SelectionCard = ({ unit, addFunction }) => {
+  const { name, point_cost } = unit; //todo temporary will need to expand deez props more when the comp grows into something usable
   return (
-    <Body>
+    <Body
+      onClick={e => {
+        e.stopPropagation();
+        addFunction(unit);
+      }}
+    >
       <p>{name}</p>
-      <p>{cost}</p>
+      <p>{point_cost}</p>
     </Body>
   );
 };
 
 SelectionCard.propTypes = {
-  unit: PropTypes.object.isRequired
+  unit: PropTypes.object.isRequired,
+  addFunction: PropTypes.func
 };
 
 export default SelectionCard;
