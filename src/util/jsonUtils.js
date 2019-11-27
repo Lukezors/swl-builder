@@ -19,7 +19,7 @@ export const calculateUsage = (unitList) => {
     };
 
     let currentUnit;
-    Object.keys(unitList).map(key => {
+    Object.keys(unitList).forEach(key => {
         currentUnit = unitList[key];
         usage.points += currentUnit.point_cost;
         usage.slots[currentUnit.rank]++;

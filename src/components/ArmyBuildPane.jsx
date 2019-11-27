@@ -6,7 +6,7 @@ import SelectionPane from "./SelectionPane";
 import UsageBar from "./UsageBar";
 
 import { getFaction, calculateUsage } from "../util/jsonUtils";
-import {FACTIONS, RANKS} from "../util/constants";
+import {FACTIONS} from "../util/constants";
 
 const Container = styled.div`
     display: grid;
@@ -18,17 +18,6 @@ const Container = styled.div`
 
 const ArmyBuildPane = () => {
   const [unitList, setUnitList] = useState({});
-  const [usage, setUsage] = useState({
-    points: 0,
-    slots: {
-      [RANKS.COMMANDER]: 0,
-      [RANKS.OPERATIVE]: 0,
-      [RANKS.CORPS]: 0,
-      [RANKS.SPECIAL_FORCES]: 0,
-      [RANKS.SUPPORT]: 0,
-      [RANKS.HEAVY]: 0,
-    }
-  });
   const [listIndex, setListIndex] = useState(1);
 
   const addUnit = unit => {
