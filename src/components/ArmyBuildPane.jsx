@@ -28,10 +28,9 @@ const ArmyBuildPane = () => {
     setListIndex(listIndex + 1);
   };
   const removeUnit = index => {
-    let newList = { ...unitList };
-    delete newList[index];
+    const {[index]: removedValue, ...remaining} = unitList;
     setUnitList(
-      newList
+      remaining
     );
   };
   return (
