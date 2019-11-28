@@ -12,7 +12,9 @@ const CollapsableHeader = ({ title, children }) => {
   const [open, setOpen] = useState(false);
   return (
     <Body onClick={() => setOpen(!open)}>
-      <Title>{title}</Title>
+      <Title>
+        {title} {open ? <>&#9650;</> : <>&#9660;</>}
+      </Title>
 
       {open && <>{children}</>}
     </Body>
