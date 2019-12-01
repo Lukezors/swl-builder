@@ -1,12 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 import CollapsableHeader from "./CollapsableHeader";
 import SelectionCard from "./SelectionCard";
-
-import { getFaction } from "../util/jsonUtils";
-
-import { FACTIONS } from "../util/constants";
 
 const Body = styled.div`
   border-style: solid;
@@ -15,23 +12,27 @@ const Body = styled.div`
   border-right: 0;
 `;
 
-const Category = ({ title, units }) => (
+const Category = ({ title, units, addFunc }) => (
   <CollapsableHeader key={title} title={title}>
     {units.map(subitem => (
-      <SelectionCard unit={subitem} key={subitem.name} />
+      <SelectionCard unit={subitem} key={subitem.name} addFunction={addFunc}/>
     ))}
   </CollapsableHeader>
 );
 
-const SelectionPane = () => {
-  const curData = getFaction(FACTIONS.REBEL);
+const SelectionPane = ({factionUnits, addFunction}) => {
   return (
     <Body>
-      {Object.keys(curData).map(item => (
-        <Category title={item} key={item} units={curData[item]} />
+      {Object.keys(factionUnits).map(item => (
+        <Category title={item} key={item} units={factionUnits[item]} addFunc={addFunction} />
       ))}
     </Body>
   );
+};
+
+SelectionPane.propTypes = {
+  factionUnits: PropTypes.object,
+  addFunction: PropTypes.func
 };
 
 export default SelectionPane;
