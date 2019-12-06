@@ -5,6 +5,8 @@ export const sum = (i, x) => i + x;
 
 export const getFaction = factionName => data.units[factionName];
 
+export const getUpgrades = upgradeType => data.upgrades[upgradeType];
+
 export const calculateUsage = (unitList) => {
     let usage = {
         points: 0,
@@ -21,6 +23,11 @@ export const calculateUsage = (unitList) => {
     let currentUnit;
     Object.keys(unitList).forEach(key => {
         currentUnit = unitList[key];
+        if(currentUnit.selected_upgrades) {
+            currentUnit.selected_upgrades.forEach((upgrade) => {
+                usage.points += upgrade.point_cost;
+            });
+        }
         usage.points += currentUnit.point_cost;
         usage.slots[currentUnit.rank]++;
     });

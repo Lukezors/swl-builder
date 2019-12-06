@@ -21,6 +21,7 @@ const ArmyBuildPane = () => {
   const [listIndex, setListIndex] = useState(1);
 
   const addUnit = unit => {
+    unit.selected_upgrades = [];
     setUnitList({
       ...unitList,
       [listIndex]: unit
@@ -33,6 +34,11 @@ const ArmyBuildPane = () => {
       remaining
     );
   };
+
+  const addUpgrade = (unitKey, upgrade) => {
+    unitList[unitKey].selected_upgrades.push(upgrade)
+  };
+
   return (
     <Container>
       <UsageBar usage={calculateUsage(unitList)} />
@@ -40,7 +46,7 @@ const ArmyBuildPane = () => {
         addFunction={addUnit}
         factionUnits={getFaction(FACTIONS.REBEL)}
       />
-      <ArmyList removeFunction={removeUnit} factionUnits={unitList} />
+      <ArmyList updateFunction={addUpgrade} removeFunction={removeUnit} factionUnits={unitList} />
     </Container>
   );
 };

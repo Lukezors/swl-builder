@@ -9,9 +9,9 @@ const Body = styled.div`
   flex-grow: 3;
 `;
 
-const ArmyList = ({factionUnits, removeFunction}) => <Body>
+const ArmyList = ({factionUnits, removeFunction, updateFunction}) => <Body>
     {Object.keys(factionUnits).map(key => (
-        <UnitCard unit={factionUnits[key]} key={key} deleteFunction={removeFunction} index={key}/>
+        <UnitCard updateFunction={updateFunction} unit={factionUnits[key]} key={key} deleteFunction={removeFunction} index={key}/>
     ))}
 
 </Body>;
@@ -19,7 +19,8 @@ const ArmyList = ({factionUnits, removeFunction}) => <Body>
 
 ArmyList.propTypes = {
     factionUnits: PropTypes.object,
-    removeFunction: PropTypes.func
+    removeFunction: PropTypes.func,
+    updateFunction: PropTypes.func
 };
 
 export default ArmyList;

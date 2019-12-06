@@ -104,5 +104,20 @@ export const data = {
       ]
     }
   },
-  upgrades: {}
+  upgrades: {
+    [UPGRADE_TYPES.GEAR]: [
+      {
+        name: "Recon Intel",
+        point_cost: 2
+      },
+      {
+        name: "Targeting Scopes",
+        point_cost: 4
+      },
+      {
+        name: "Grappling Hooks",
+        point_cost: 3
+      }
+    ]
+  }
 };

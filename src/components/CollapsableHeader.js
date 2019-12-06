@@ -15,7 +15,6 @@ const CollapsableHeader = ({ title, children }) => {
       <Title>
         {title} {open ? <>&#9650;</> : <>&#9660;</>}
       </Title>
-
       {open && <>{children}</>}
     </Body>
   );

@@ -38,12 +38,15 @@ test('Check usage generates correct values', () => {
                 "Gear",
                 "Grenades"
             ],
-            "restricted_upgrades": []
+            "restricted_upgrades": [],
+            "selected_upgrades": [
+                {"name": "Targeting scopes", "point_cost": 4}
+            ]
         }
     };
 
     let results = calculateUsage(testData);
-    expect(results.points).toEqual(80);
+    expect(results.points).toEqual(84);
     expect(results.slots[RANKS.COMMANDER]).toEqual(0);
     expect(results.slots[RANKS.CORPS]).toEqual(2);
 });
