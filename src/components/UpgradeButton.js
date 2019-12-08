@@ -5,7 +5,13 @@ import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 
-const UpgradeButton = ({ type, upgrades, upgradeFunction, unitKey }) => {
+const UpgradeButton = ({
+  type,
+  upgrades,
+  upgradeFunction,
+  unitKey,
+  upgradeKey
+}) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [selectedUpgrade, setSelectedUpgrade] = useState(undefined);
 
@@ -15,7 +21,7 @@ const UpgradeButton = ({ type, upgrades, upgradeFunction, unitKey }) => {
 
   const handleClose = upgrade => {
     setSelectedUpgrade(upgrade);
-    upgradeFunction(unitKey, upgrade);
+    upgradeFunction(unitKey, upgradeKey, upgrade);
     setAnchorEl(null);
   };
 
@@ -50,7 +56,8 @@ UpgradeButton.propTypes = {
   type: PropTypes.string,
   upgrades: PropTypes.array,
   upgradeFunction: PropTypes.func,
-  unitKey: PropTypes.number
+  unitKey: PropTypes.number,
+  upgradeKey: PropTypes.number
 };
 
 export default UpgradeButton;
