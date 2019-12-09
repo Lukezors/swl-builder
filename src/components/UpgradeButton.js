@@ -34,7 +34,7 @@ const UpgradeButton = ({
         id="upgrade-menu"
         anchorEl={anchorEl}
         keepMounted
-        open={Boolean(anchorEl)}
+        open={anchorEl != null}
         onClose={() => handleClose(selectedUpgrade)}
       >
         {upgrades &&
