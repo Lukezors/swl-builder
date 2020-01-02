@@ -25,7 +25,10 @@ const ArmyBuildPane = () => {
     unit.selected_upgrades = {};
     setUnitList({
       ...unitList,
-      [listIndex]: unit
+      [listIndex]: {
+          ...unit,
+          selected_upgrades: {}
+      }
     });
     setListIndex(listIndex + 1);
   };
