@@ -118,6 +118,16 @@ export const data = {
         name: "Grappling Hooks",
         point_cost: 3
       }
+    ],
+    [UPGRADE_TYPES.FORCE]: [
+      {
+        name: "Force Reflexes",
+        point_cost: 10
+      },
+      {
+        name: "Force Push",
+        point_cost: 10
+      }
     ]
   }
 };

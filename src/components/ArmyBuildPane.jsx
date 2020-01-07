@@ -22,7 +22,6 @@ const ArmyBuildPane = () => {
   const [listIndex, setListIndex] = useState(1);
 
   const addUnit = unit => {
-    unit.selected_upgrades = {};
     setUnitList({
       ...unitList,
       [listIndex]: {

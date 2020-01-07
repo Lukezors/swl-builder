@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
+import {upgradeTemplate} from "../data/dataTemplates"
+
 import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -15,11 +17,11 @@ const UpgradeButton = ({
   const [anchorEl, setAnchorEl] = useState(null);
   const [selectedUpgrade, setSelectedUpgrade] = useState(undefined);
 
-  const handleClick = event => {
+  const displayUpgradeOptions = event => {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleClose = upgrade => {
+  const onUpgradeSelect = upgrade => {
     setSelectedUpgrade(upgrade);
     upgradeFunction(unitKey, upgradeKey, upgrade);
     setAnchorEl(null);
@@ -27,7 +29,7 @@ const UpgradeButton = ({
 
   return (
     <>
-      <Button variant="contained" onClick={handleClick}>
+      <Button variant="contained" onClick={displayUpgradeOptions}>
         {selectedUpgrade ? selectedUpgrade.name : type}
       </Button>
       <Menu
@@ -35,18 +37,16 @@ const UpgradeButton = ({
         anchorEl={anchorEl}
         keepMounted
         open={anchorEl != null}
-        onClose={() => handleClose(selectedUpgrade)}
+        onClose={() => onUpgradeSelect(selectedUpgrade)}
       >
         {(upgrades && upgrades.length > 0) &&
-            upgrades.map(upgrade => ...
-          upgrades.length > 0 &&
           upgrades.map(upgrade => (
-            <MenuItem onClick={() => handleClose(upgrade)}>
+            <MenuItem key={upgrade.name} onClick={() => onUpgradeSelect(upgrade)}>
               {upgrade.name}
             </MenuItem>
           ))}
         {selectedUpgrade && (
-          <MenuItem onClick={() => handleClose(undefined)}>Remove</MenuItem>
+          <MenuItem onClick={() => onUpgradeSelect(undefined)}>Remove</MenuItem>
         )}
       </Menu>
     </>
@@ -54,11 +54,11 @@ const UpgradeButton = ({
 };
 
 UpgradeButton.propTypes = {
-  type: PropTypes.string,
-  upgrades: PropTypes.array,
-  upgradeFunction: PropTypes.func,
-  unitKey: PropTypes.number,
-  upgradeKey: PropTypes.number
+  type: PropTypes.string.isRequired,
+  upgrades: PropTypes.arrayOf(upgradeTemplate).isRequired,
+  upgradeFunction: PropTypes.func.isRequired,
+  unitKey: PropTypes.number.isRequired,
+  upgradeKey: PropTypes.number.isRequired
 };
 
 export default UpgradeButton;

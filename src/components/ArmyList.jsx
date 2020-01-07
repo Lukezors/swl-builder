@@ -19,8 +19,8 @@ const ArmyList = ({factionUnits, removeFunction, updateFunction}) => <Body>
 
 ArmyList.propTypes = {
     factionUnits: PropTypes.object,
-    removeFunction: PropTypes.func,
-    updateFunction: PropTypes.func
+    removeFunction: PropTypes.func.isRequired,
+    updateFunction: PropTypes.func.isRequired
 };
 
 export default ArmyList;

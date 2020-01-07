@@ -41,6 +41,7 @@ const UnitCard = ({ unit, deleteFunction, index, updateFunction }) => {
           <UpgradeButton
             unitKey={index}
             upgradeKey={key}
+            key
             upgradeFunction={updateFunction}
             type={name}
             upgrades={getUpgrades(name)}
@@ -54,8 +55,8 @@ const UnitCard = ({ unit, deleteFunction, index, updateFunction }) => {
 UnitCard.propTypes = {
   unit: PropTypes.object.isRequired,
   deleteFunction: PropTypes.func.isRequired,
-  updateFunction: PropTypes.func,
-  index: PropTypes.string
+  updateFunction: PropTypes.func.isRequired,
+  index: PropTypes.string.isRequired
 };
 
 export default UnitCard;
