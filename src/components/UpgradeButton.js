@@ -37,7 +37,8 @@ const UpgradeButton = ({
         open={anchorEl != null}
         onClose={() => handleClose(selectedUpgrade)}
       >
-        {upgrades &&
+        {(upgrades && upgrades.length > 0) &&
+            upgrades.map(upgrade => ...
           upgrades.length > 0 &&
           upgrades.map(upgrade => (
             <MenuItem onClick={() => handleClose(upgrade)}>
