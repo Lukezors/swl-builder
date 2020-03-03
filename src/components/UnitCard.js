@@ -37,14 +37,14 @@ const UnitCard = ({ unit, deleteFunction, index, updateFunction }) => {
         </RemoveButton>
       </p>
       <UpgradeBar>
-        {upgrades_slots.map((name, key) => (
+        {upgrades_slots.map((type, key) => (
           <UpgradeButton
             unitKey={index}
             upgradeKey={key}
-            key
+            key={key}
             upgradeFunction={updateFunction}
-            type={name}
-            upgrades={getUpgrades(name)}
+            type={type}
+            upgrades={getUpgrades(type)}
           />
         ))}
       </UpgradeBar>
