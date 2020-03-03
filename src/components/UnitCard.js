@@ -3,6 +3,10 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import UpgradeButton from "./UpgradeButton";
 
+import ClearIcon from "@material-ui/icons/Clear";
+import IconButton from "@material-ui/core/IconButton";
+import { getUpgrades } from "../util/jsonUtils";
+
 const Body = styled.div`
   border-style: solid;
   border-width: 1px;
@@ -12,27 +16,36 @@ const UpgradeBar = styled.div`
   display: flex;
 `;
 
-const RemoveButton = styled.button`
+const RemoveButton = styled.div`
   float: right;
 `;
 
-const UnitCard = ({ unit, deleteFunction, index }) => {
+const UnitCard = ({ unit, deleteFunction, index, updateFunction }) => {
   const { name, upgrades_slots } = unit;
   return (
     <Body>
       <p>
         {name}
-        <RemoveButton
-          onClick={() => {
-            deleteFunction(index);
-          }}
-        >
-          X{" "}
+        <RemoveButton>
+          <IconButton
+            onClick={() => {
+              deleteFunction(index);
+            }}
+          >
+            <ClearIcon />
+          </IconButton>
         </RemoveButton>
       </p>
       <UpgradeBar>
-        {upgrades_slots.map(name => (
-          <UpgradeButton type={name} />
+        {upgrades_slots.map((type, key) => (
+          <UpgradeButton
+            unitKey={index}
+            upgradeKey={key}
+            key={key}
+            upgradeFunction={updateFunction}
+            type={type}
+            upgrades={getUpgrades(type)}
+          />
         ))}
       </UpgradeBar>
     </Body>
@@ -42,7 +55,8 @@ const UnitCard = ({ unit, deleteFunction, index }) => {
 UnitCard.propTypes = {
   unit: PropTypes.object.isRequired,
   deleteFunction: PropTypes.func.isRequired,
-  index: PropTypes.string
+  updateFunction: PropTypes.func.isRequired,
+  index: PropTypes.string.isRequired
 };
 
 export default UnitCard;

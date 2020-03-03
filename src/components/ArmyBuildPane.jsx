@@ -6,7 +6,7 @@ import SelectionPane from "./SelectionPane";
 import UsageBar from "./UsageBar";
 
 import { getFaction, calculateUsage } from "../util/jsonUtils";
-import {FACTIONS} from "../util/constants";
+import { FACTIONS } from "../util/constants";
 
 const Container = styled.div`
     display: grid;
@@ -17,22 +17,32 @@ const Container = styled.div`
 `;
 
 const ArmyBuildPane = () => {
+
   const [unitList, setUnitList] = useState({});
   const [listIndex, setListIndex] = useState(1);
 
   const addUnit = unit => {
     setUnitList({
       ...unitList,
-      [listIndex]: unit
+      [listIndex]: {
+          ...unit,
+          selected_upgrades: {}
+      }
     });
     setListIndex(listIndex + 1);
   };
+
   const removeUnit = index => {
-    const {[index]: removedValue, ...remaining} = unitList;
-    setUnitList(
-      remaining
-    );
+    const { [index]: removedValue, ...remaining } = unitList;
+    setUnitList(remaining);
   };
+
+  const addUpgrade = (unitKey, upgradeKey, upgrade) => {
+      let unitListCpy = {...unitList};
+      unitListCpy[unitKey].selected_upgrades[upgradeKey] = upgrade;
+      setUnitList(unitListCpy);
+  };
+
   return (
     <Container>
       <UsageBar usage={calculateUsage(unitList)} />
@@ -40,7 +50,11 @@ const ArmyBuildPane = () => {
         addFunction={addUnit}
         factionUnits={getFaction(FACTIONS.REBEL)}
       />
-      <ArmyList removeFunction={removeUnit} factionUnits={unitList} />
+      <ArmyList
+        updateFunction={addUpgrade}
+        removeFunction={removeUnit}
+        factionUnits={unitList}
+      />
     </Container>
   );
 };

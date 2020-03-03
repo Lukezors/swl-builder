@@ -3,7 +3,8 @@ import { RANKS, UPGRADE_TYPES, FACTIONS, UNIT_TYPES } from "../util/constants";
 
 export const upgradeTemplate = {
   name: PropTypes.string.isRequired,
-  point_cost: PropTypes.number.isRequired
+  point_cost: PropTypes.number.isRequired,
+  text: PropTypes.string
 };
 
 /*TODO: Flesh this out
